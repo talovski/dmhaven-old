@@ -1,7 +1,7 @@
 
 function Search ({ searchSpells, setSearchSpells }) {
   return (
-    <div>
+    <div className="max-w-prose md:w-full">
       <input 
         onChange={(event) => setSearchSpells(event.target.value)}
         className="px-3 py-1 border-2 rounded-lg border-gray-200 outline-none"
@@ -9,7 +9,7 @@ function Search ({ searchSpells, setSearchSpells }) {
         value={searchSpells}
       />
   
-      <div className="my-2 flex flex-row justify-between align-middle w-3/4">
+      <div className="my-2 flex flex-row flex-wrap justify-between align-middle">
         
         <button className="border-2 hover:border-gray-500 border-gray-200 shadow-md rounded-lg py-1 px-4">
           Spells

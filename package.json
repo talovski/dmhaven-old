@@ -6,14 +6,12 @@
     "start": "next start"
   },
   "dependencies": {
-    "axios": "^0.21.1",
-    "eslint": "^7.31.0",
-    "html-react-parser": "^1.2.7",
+    "@apollo/client": "^3.4.4",
+    "graphql": "^15.5.1",
     "next": "latest",
-    "react": "^17.0.2",
     "react-dom": "^17.0.2",
-    "react-markdown": "^6.0.2",
-    "remark-react": "^8.0.0",
+    "eslint": "^7.31.0",
+    "react": "^17.0.2",
     "standard": "^16.0.3"
   },
   "prettier": "prettier-config-standard",

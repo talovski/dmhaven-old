@@ -1,36 +1,16 @@
 import { useState } from "react"
 import { gql, useQuery } from "@apollo/client"
+import { ALL_SPELLS } from "../lib/queries"
 
-import Search from "./Search"
-import Spell from "./Spell"
-
-export const ALL_SPELLS = gql`
-  query allSpells {
-    spells {
-      index
-      name
-      desc
-      classes {
-        index
-        name
-      }
-      damage {
-        damage_type {
-          name
-        }
-        damage_at_slot_level
-        damage_at_character_level
-      }
-    }
-  }
-`
+import Spell from "./Categories/Spell"
 
 export default function SpellsList() {
   const [searchSpells, setSearchSpells] = useState("")
 
   const { loading, error, data } = useQuery(ALL_SPELLS)
-  if (error) return <div>Error loading spells</div>
-  if (loading) return <div>Loading spells</div>
+
+  if (error) return <div>Error loading items</div>
+  if (loading) return <div>Loading items</div>
 
   const { spells: allSpells } = data
   
@@ -43,16 +23,9 @@ export default function SpellsList() {
     
   return (
     <div className="p-4 pt-6">
-    
-      <Search 
-        searchSpells={searchSpells}
-        setSearchSpells={setSearchSpells}
-      />
-    
     {filteredSpells.map((spell) => 
       <Spell key={spell.index} spell={spell} />
     )}
-    
     </div> 
   )
 }

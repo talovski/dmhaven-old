@@ -9,14 +9,15 @@
     "@apollo/client": "^3.4.4",
     "graphql": "^15.5.1",
     "next": "latest",
-    "react-dom": "^17.0.2",
-    "eslint": "^7.31.0",
     "react": "^17.0.2",
+    "react-dom": "^17.0.2",
     "standard": "^16.0.3"
   },
   "prettier": "prettier-config-standard",
   "devDependencies": {
     "autoprefixer": "^10.2.6",
+    "eslint": "^7.32.0",
+    "eslint-plugin-react": "^7.24.0",
     "postcss": "^8.3.5",
     "prettier-config-standard": "^4.0.0",
     "tailwindcss": "^2.2.4"

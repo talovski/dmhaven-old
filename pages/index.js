@@ -1,3 +1,4 @@
+import React from "react";
 import { initializeApollo } from "../lib/apolloClient"
 import { ALL_SPELLS, ALL_EQUIPMENT } from '../lib/queries';
 import Search from '../components/Interface/Search'
@@ -27,6 +28,8 @@ export default function Home() {
   // select equipment and select spells determine the state of the button
   const [selectEquipment, setSelectEquipment] = useState(false)
   const [selectSpells, setSelectSpells] = useState(false)
+  const [activeSearch, setActiveSearch] = useState("")
+
 
   return (
     <div className="m-10">
@@ -38,11 +41,16 @@ export default function Home() {
         setSelectSpells={setSelectSpells}
         selectEquipment={selectEquipment}
         selectSpells={selectSpells}
+        activeSearch={activeSearch}
+        setActiveSearch={setActiveSearch}
       />
       <ActiveCategory
         activeFilter={activeFilter}
         selectEquipment={selectEquipment}
         selectSpells={selectSpells}
+        activeSearch={activeSearch}
+        setActiveSearch={setActiveSearch}
+
         />
 
     </div>

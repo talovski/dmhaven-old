@@ -1,3 +1,4 @@
+import React from "react"
 const Cost = ({ cost }) => (
   <div>
     <p>Cost</p>

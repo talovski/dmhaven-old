@@ -1,3 +1,4 @@
+import React from "react"
 import Desc from "../Properties/Desc"
 import Name from "../Properties/Name"
 

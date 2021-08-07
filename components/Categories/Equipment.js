@@ -1,7 +1,9 @@
+import React from "react"
+
 import Name from "../Properties/Name"
 import Desc from "../Properties/Desc"
 import Damage from '../Properties/Damage'
-import ArmorClass from "../Properties/ArmorClass"
+// import ArmorClass from "../Properties/ArmorClass"
 import Range from "../Properties/Range"
 
 const Equipment = ({ equipment }) => {

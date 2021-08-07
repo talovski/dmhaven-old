@@ -1,15 +1,17 @@
-import { useState } from "react"
+import React from "react"
 import SearchButton from "./SearchButton"
 
 function Search ({
-  activeFilter, setActiveFilter,
-  selectSpells, setSelectSpells,
-  selectEquipment, setSelectEquipment
+  setActiveFilter,
+  setSelectSpells,
+  setSelectEquipment,
+  activeSearch,
+  setActiveSearch
 }) {
-  const [searchEquipment,   setSearchEquipment]   = useState("")
-  const [searchSpells,      setSearchSpells]      = useState("")
 
-  const [activeSearch, setActiveSearch] = useState()
+  const handleInputChange = (event) => {
+    setActiveSearch(event.target.value)
+  }
 
   const handleSpellsButtonClick = () => {
     setActiveFilter("spells")
@@ -23,21 +25,18 @@ function Search ({
   }
   
 
-
   return (
     <div className="max-w-prose md:w-full">
       <input 
-        onChange={(event) => setActiveSearch(event.target.value)}
+        onChange={handleInputChange}
         className="px-3 py-1 border-2 rounded-lg border-gray-200 outline-none"
         type="text"
-        value={searchSpells}
+        value={activeSearch}
       />
   
       <div className="my-2 flex flex-row flex-wrap justify-between align-middle">
         <SearchButton activateFilter={handleEquipmentsButtonClick} text="Equipment" />
         <SearchButton activateFilter={handleSpellsButtonClick} text="Spells" />
-        {/* <SearchButton activateFilter={selectedFilter} text="Classes" /> */}
-        {/* <SearchButton activateFilter={selectedFilter} text="Backgrounds" /> */}
       </div>
     </div>
   )

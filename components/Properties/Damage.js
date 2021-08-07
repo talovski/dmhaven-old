@@ -1,3 +1,4 @@
+import React from "react"
 import DamageLevel from "./DamageLevel"
 
 const Damage = ({ damage }) => {

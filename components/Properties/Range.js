@@ -1,3 +1,5 @@
+import React from "react"
+
 const Range = ({ range }) => (
   <div>
     {range.long && <p>Long range — {range.long}</p> }

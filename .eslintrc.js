@@ -18,6 +18,8 @@ module.exports = {
         "react"
     ],
     "rules": {
-        "no-undef": false
+        // "no-undef": false
+        "react/prop-types": 0,
+        "react/jsx-no-undef": 0
     }
 };

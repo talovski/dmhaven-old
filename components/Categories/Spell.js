@@ -1,3 +1,5 @@
+import React from "react"
+
 import Desc from "../Properties/Desc"
 import Damage from '../Properties/Damage'
 import Classes from "../Properties/Classes"

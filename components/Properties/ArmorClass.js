@@ -1,3 +1,4 @@
+import React from "react"
 const ArmorClass = ({ armorClass }) => (
   <>
     <p>Armor class — base: {armorClass.base}</p>

@@ -1,12 +1,10 @@
 import React from "react"
-// import { useState } from "react"
 import { useQuery } from "@apollo/client"
-import { ALL_EQUIPMENT } from "../lib/queries"
+import { ALL_EQUIPMENT } from "../lib/equipmentQuery"
 
 import Equipment from "./Categories/Equipment"
 
-export default function EquipList() {
-  // const [searchEquipment, setSearchEquipment] = useState("")
+export default function EquipList({ activeSearch }) {
 
   const { loading, error, data } = useQuery(ALL_EQUIPMENT)
 
@@ -15,15 +13,13 @@ export default function EquipList() {
 
   const { equipments: allEquipment } = data
   
-  // const filteredEquipment = allEquipment.filter(equipment => {
-  //   equipment.name.toLowerCase().includes(searchEquipment.toLowerCase())
-  // })  
-
+  const filteredEquipment = allEquipment.filter(equipment =>
+      equipment.name.toLowerCase().includes(activeSearch.toLowerCase()) )
   return (
     <div className="p-4 pt-6">
-    {allEquipment.map((equipment) => 
-      <Equipment key={equipment.index} equipment={equipment} />
-    )}
+      {filteredEquipment.map((equipment) => 
+        <Equipment key={equipment.index} equipment={equipment}/>
+  )}
     </div> 
   )
 }

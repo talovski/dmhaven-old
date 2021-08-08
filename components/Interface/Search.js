@@ -33,8 +33,6 @@ function Search ({
     setSelectCondition(true)
   }
 
-  
-
   return (
     <div className="max-w-prose md:w-full">
       <input 

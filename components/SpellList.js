@@ -1,6 +1,6 @@
 import React from "react"
 import { useQuery } from "@apollo/client"
-import { ALL_SPELLS } from "../lib/queries"
+import { ALL_SPELLS } from "../lib/spellQuery"
 
 import Spell from "./Categories/Spell"
 
@@ -14,10 +14,12 @@ export default function SpellsList ({ activeSearch }) {
   const { spells: allSpells } = data
   
   const filteredSpells = allSpells.filter(spell => {
+    //include classes associated with spells into search scope
     const nameObj = spell.classes.map(playerClass => playerClass.name)
     const name = nameObj.map(spell => spell.toLowerCase())
-    return name.includes(activeSearch.toLowerCase()) ||
-      spell.name.toLowerCase().includes(activeSearch.toLowerCase())
+    
+    return name.includes(activeSearch.toLowerCase()) 
+        || spell.name.toLowerCase().includes(activeSearch.toLowerCase())
     })
     
   return (

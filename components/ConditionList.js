@@ -15,7 +15,7 @@ export default function ConditionList ({ activeSearch }) {
     condition.name.toLowerCase().includes(activeSearch.toLowerCase()))    
   
   return (
-    <div className="p-4 pt-6">
+    <div>
       {filteredConditions.map((condition) => 
         <Condition key={condition.index} condition={condition} />
       )}

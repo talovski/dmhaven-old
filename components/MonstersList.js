@@ -18,7 +18,7 @@ export default function MonstersList({ activeSearch }) {
   )
   
   return (
-    <div className="pl-4 pt-6">
+    <div>
       {filteredMonsters.map((monster) => 
         <Monster key={monster.index} monster={monster}/>
       )}

@@ -18,7 +18,7 @@ export default function EquipList({ activeSearch }) {
   )
   
   return (
-    <div className="pl-4 pt-6">
+    <div>
       {filteredEquipment.map((equipment) => 
         <Equipment key={equipment.index} equipment={equipment}/>
       )}

@@ -23,7 +23,7 @@ export default function SpellsList ({ activeSearch }) {
     })
     
   return (
-    <div className="p-4 pt-6">
+    <div>
     {filteredSpells.map((spell) => 
       <Spell key={spell.index} spell={spell} />
     )}

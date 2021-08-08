@@ -1,13 +1,17 @@
 import React from "react"
-import EquipList from "../equipList"
-import SpellsList from "../spellsList"
+import EquipList from "../EquipList"
+import SpellsList from "../SpellsList"
+import ConditionList from "../ConditionList"
 
 const ActiveCategory = ({ activeFilter, activeSearch }) => {
-  const res = activeFilter === "equipment" 
-    ? <EquipList activeSearch={activeSearch} /> 
-    : <SpellsList activeSearch={activeSearch} />
+  function screen (activeFilter) {
+    if (activeFilter === "equipment")  return <EquipList activeSearch={activeSearch} /> 
+    if (activeFilter === "spells")     return <SpellsList activeSearch={activeSearch} />
+    if (activeFilter === "conditions") return <ConditionList activeSearch={activeSearch} />
 
-  return res
+  }
+
+  return <div>{screen(activeFilter)}</div>
 }
 
 export default ActiveCategory

@@ -6,7 +6,8 @@ function Search ({
   setSelectSpells,
   setSelectEquipment,
   activeSearch,
-  setActiveSearch
+  setActiveSearch,
+  setSelectCondition
 }) {
 
   const handleInputChange = (event) => {
@@ -17,12 +18,21 @@ function Search ({
     setActiveFilter("spells")
     setSelectSpells(true)
     setSelectEquipment(false)
+    setSelectCondition(false)
   }
   const handleEquipmentsButtonClick = () => {
     setActiveFilter("equipment")
     setSelectSpells(false)
     setSelectEquipment(true)
+    setSelectCondition(false)
   }
+  const handleConditionsButtonClick = () => {
+    setActiveFilter("conditions")
+    setSelectSpells(false)
+    setSelectEquipment(false)
+    setSelectCondition(true)
+  }
+
   
 
   return (
@@ -37,6 +47,7 @@ function Search ({
       <div className="my-2 flex flex-row flex-wrap justify-between align-middle">
         <SearchButton activateFilter={handleEquipmentsButtonClick} text="Equipment" />
         <SearchButton activateFilter={handleSpellsButtonClick} text="Spells" />
+        <SearchButton activateFilter={handleConditionsButtonClick} text="Conditions" />
       </div>
     </div>
   )

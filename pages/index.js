@@ -28,6 +28,7 @@ export default function Home() {
   // select equipment and select spells determine the state of the button
   const [selectEquipment, setSelectEquipment] = useState(false)
   const [selectSpells, setSelectSpells] = useState(false)
+  const [selectCondition, setSelectCondition] = useState(false)
   const [activeSearch, setActiveSearch] = useState("")
 
 
@@ -35,22 +36,18 @@ export default function Home() {
     <div className="m-10">
       <h1 className="text-3xl font-bold">D&D Spells</h1>
       <Search 
-        activeFilter={activeFilter}
-        setActiveFilter={setActiveFilter}
-        setSelectEquipment={setSelectEquipment}
-        setSelectSpells={setSelectSpells}
-        selectEquipment={selectEquipment}
-        selectSpells={selectSpells}
-        activeSearch={activeSearch}
-        setActiveSearch={setActiveSearch}
+        activeFilter={activeFilter}       setActiveFilter={setActiveFilter}
+        activeSearch={activeSearch}       setActiveSearch={setActiveSearch}
+        selectEquipment={selectEquipment} setSelectEquipment={setSelectEquipment}
+        selectSpells={selectSpells}       setSelectSpells={setSelectSpells}
+        selectCondition={selectCondition} setSelectCondition={setSelectCondition}
       />
       <ActiveCategory
+        activeSearch={activeSearch} setActiveSearch={setActiveSearch}
         activeFilter={activeFilter}
         selectEquipment={selectEquipment}
         selectSpells={selectSpells}
-        activeSearch={activeSearch}
-        setActiveSearch={setActiveSearch}
-
+        selectCondition={selectCondition}
         />
 
     </div>

@@ -1,6 +1,6 @@
 import React from "react"
 import EquipList from "../EquipList"
-import SpellsList from "../SpellsList"
+import SpellsList from "../SpellList"
 import ConditionList from "../ConditionList"
 
 const ActiveCategory = ({ activeFilter, activeSearch }) => {

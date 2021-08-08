@@ -4,7 +4,7 @@ import { ALL_CONDITIONS } from "../lib/conditionQuery"
 import Condition from './Categories/Condition'
 
 
-export default function ConditionList ({ activeSearch }) {
+export default function ConditionList () {
   const { loading, error, data } = useQuery(ALL_CONDITIONS)
 
   if (error) return <div>Error loading conditions</div>

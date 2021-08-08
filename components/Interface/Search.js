@@ -44,7 +44,7 @@ function Search ({
         value={activeSearch}
       />
   
-      <div className="my-2 flex flex-row flex-wrap justify-between align-middle">
+      <div className="my-2 flex flex-row flex-wrap justify-start align-middle">
         <SearchButton activateFilter={handleEquipmentsButtonClick} text="Equipment" />
         <SearchButton activateFilter={handleSpellsButtonClick} text="Spells" />
         <SearchButton activateFilter={handleConditionsButtonClick} text="Conditions" />

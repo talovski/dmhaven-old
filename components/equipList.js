@@ -14,12 +14,14 @@ export default function EquipList({ activeSearch }) {
   const { equipments: allEquipment } = data
   
   const filteredEquipment = allEquipment.filter(equipment =>
-      equipment.name.toLowerCase().includes(activeSearch.toLowerCase()) )
+    equipment.name.toLowerCase().includes(activeSearch.toLowerCase())
+  )
+  
   return (
     <div className="p-4 pt-6">
       {filteredEquipment.map((equipment) => 
         <Equipment key={equipment.index} equipment={equipment}/>
-  )}
+      )}
     </div> 
   )
 }

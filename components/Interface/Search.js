@@ -7,7 +7,8 @@ function Search ({
   setSelectEquipment,
   activeSearch,
   setActiveSearch,
-  setSelectCondition
+  setSelectCondition,
+  setSelectMonsters
 }) {
 
   const handleInputChange = (event) => {
@@ -19,18 +20,31 @@ function Search ({
     setSelectSpells(true)
     setSelectEquipment(false)
     setSelectCondition(false)
+    setSelectMonsters(false)
   }
   const handleEquipmentsButtonClick = () => {
     setActiveFilter("equipment")
     setSelectSpells(false)
     setSelectEquipment(true)
     setSelectCondition(false)
+    setSelectMonsters(false)
+
   }
   const handleConditionsButtonClick = () => {
     setActiveFilter("conditions")
     setSelectSpells(false)
     setSelectEquipment(false)
     setSelectCondition(true)
+    setSelectMonsters(false)
+
+  }
+  const handleMonstersButtonClick = () => {
+    setActiveFilter("monsters")
+    setSelectSpells(false)
+    setSelectEquipment(false)
+    setSelectCondition(false)
+    setSelectMonsters(true)
+
   }
 
   return (
@@ -46,6 +60,7 @@ function Search ({
         <SearchButton activateFilter={handleEquipmentsButtonClick} text="Equipment" />
         <SearchButton activateFilter={handleSpellsButtonClick} text="Spells" />
         <SearchButton activateFilter={handleConditionsButtonClick} text="Conditions" />
+        <SearchButton activateFilter={handleMonstersButtonClick} text="Monsters" />
       </div>
     </div>
   )

@@ -28,6 +28,7 @@ export default function Home() {
   const [selectEquipment, setSelectEquipment] = useState(false)
   const [selectSpells, setSelectSpells] = useState(false)
   const [selectCondition, setSelectCondition] = useState(false)
+  const [selectMonsters, setSelectMonsters] = useState(false)
   const [activeSearch, setActiveSearch] = useState("")
 
 
@@ -40,6 +41,7 @@ export default function Home() {
         selectEquipment={selectEquipment} setSelectEquipment={setSelectEquipment}
         selectSpells={selectSpells}       setSelectSpells={setSelectSpells}
         selectCondition={selectCondition} setSelectCondition={setSelectCondition}
+        selectMonsters={selectMonsters}   setSelectMonsters={setSelectMonsters}
       />
       <ActiveCategory
         activeSearch={activeSearch} setActiveSearch={setActiveSearch}
@@ -47,6 +49,7 @@ export default function Home() {
         selectEquipment={selectEquipment}
         selectSpells={selectSpells}
         selectCondition={selectCondition}
+        selectMonsters={selectMonsters}
         />
 
     </div>

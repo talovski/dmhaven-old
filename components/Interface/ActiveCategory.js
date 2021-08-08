@@ -10,6 +10,11 @@ const ActiveCategory = ({ activeFilter, activeSearch }) => {
     if (activeFilter === "spells")     return <SpellsList activeSearch={activeSearch} />
     if (activeFilter === "conditions") return <ConditionList activeSearch={activeSearch} />
     if (activeFilter === "monsters")   return <MonstersList activeSearch={activeSearch} />
+    return (
+      <div>
+        <p>Select a category to get started</p>
+      </div>
+    )
 
   }
 

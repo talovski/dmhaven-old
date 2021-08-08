@@ -1,17 +1,33 @@
-import React from "react";
+import React, { useState } from "react";
+
+// graphql stuff
 import { initializeApollo } from "../lib/apolloClient"
 import { ALL_SPELLS } from '../lib/spellQuery'
 import { ALL_EQUIPMENT } from "../lib/equipmentQuery";
 import { ALL_CONDITIONS } from "../lib/conditionQuery";
+import { ALL_MONSTERS } from "../lib/monsterQuery";
+
+// components
 import Search from '../components/Interface/Search'
 import ActiveCategory from "../components/Interface/ActiveCategory";
-import { useState } from "react";
 
 export async function getStaticProps() {
   const apolloClient = initializeApollo();
+  // prefetching multiple queries
+  // haven't found a more elegant solution yet
   await apolloClient.query({
-    query: ALL_SPELLS, ALL_EQUIPMENT, ALL_CONDITIONS
+    query: ALL_CONDITIONS
   });
+  await apolloClient.query({
+    query: ALL_SPELLS
+  });
+  await apolloClient.query({
+    query: ALL_MONSTERS
+  });
+  await apolloClient.query({
+    query: ALL_EQUIPMENT
+  });
+
   return {
     props: {
       initialApolloState: apolloClient.cache.extract(),
@@ -23,14 +39,13 @@ export async function getStaticProps() {
 export default function Home() {
   //active filter determines which category of items to show
   const [activeFilter, setActiveFilter] = useState("")
+  const [activeSearch, setActiveSearch] = useState("")
   
   // select equipment and select spells determine the state of the button
   const [selectEquipment, setSelectEquipment] = useState(false)
   const [selectSpells, setSelectSpells] = useState(false)
   const [selectCondition, setSelectCondition] = useState(false)
   const [selectMonsters, setSelectMonsters] = useState(false)
-  const [activeSearch, setActiveSearch] = useState("")
-
 
   return (
     <div className="m-10">

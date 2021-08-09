@@ -37,34 +37,20 @@ export async function getStaticProps() {
 }
 
 export default function Home() {
-  //active filter determines which category of items to show
   const [activeFilter, setActiveFilter] = useState("")
   const [activeSearch, setActiveSearch] = useState("")
   
-  // select equipment and select spells determine the state of the button
-  const [selectEquipment, setSelectEquipment] = useState(false)
-  const [selectSpells, setSelectSpells] = useState(false)
-  const [selectCondition, setSelectCondition] = useState(false)
-  const [selectMonsters, setSelectMonsters] = useState(false)
-
   return (
     <div className="m-10">
-      <h1 className="text-3xl font-bold">D&D Spells</h1>
+      <h1 className="text-3xl font-bold">DM Haven</h1>
       <Search 
         activeFilter={activeFilter}       setActiveFilter={setActiveFilter}
         activeSearch={activeSearch}       setActiveSearch={setActiveSearch}
-        selectEquipment={selectEquipment} setSelectEquipment={setSelectEquipment}
-        selectSpells={selectSpells}       setSelectSpells={setSelectSpells}
-        selectCondition={selectCondition} setSelectCondition={setSelectCondition}
-        selectMonsters={selectMonsters}   setSelectMonsters={setSelectMonsters}
       />
       <ActiveCategory
-        activeSearch={activeSearch} setActiveSearch={setActiveSearch}
+        activeSearch={activeSearch}
+        setActiveSearch={setActiveSearch}
         activeFilter={activeFilter}
-        selectEquipment={selectEquipment}
-        selectSpells={selectSpells}
-        selectCondition={selectCondition}
-        selectMonsters={selectMonsters}
         />
 
     </div>

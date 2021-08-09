@@ -3,49 +3,16 @@ import SearchButton from "./SearchButton"
 
 function Search ({
   setActiveFilter,
-  setSelectSpells,
-  setSelectEquipment,
   activeSearch,
   setActiveSearch,
-  setSelectCondition,
-  setSelectMonsters
 }) {
 
-  const handleInputChange = (event) => {
-    setActiveSearch(event.target.value)
-  }
+  const handleInputChange = (event) => setActiveSearch(event.target.value)
 
-  const handleSpellsButtonClick = () => {
-    setActiveFilter("spells")
-    setSelectSpells(true)
-    setSelectEquipment(false)
-    setSelectCondition(false)
-    setSelectMonsters(false)
-  }
-  const handleEquipmentsButtonClick = () => {
-    setActiveFilter("equipment")
-    setSelectSpells(false)
-    setSelectEquipment(true)
-    setSelectCondition(false)
-    setSelectMonsters(false)
-
-  }
-  const handleConditionsButtonClick = () => {
-    setActiveFilter("conditions")
-    setSelectSpells(false)
-    setSelectEquipment(false)
-    setSelectCondition(true)
-    setSelectMonsters(false)
-
-  }
-  const handleMonstersButtonClick = () => {
-    setActiveFilter("monsters")
-    setSelectSpells(false)
-    setSelectEquipment(false)
-    setSelectCondition(false)
-    setSelectMonsters(true)
-
-  }
+  const handleSpellsButtonClick = () => setActiveFilter("spells")
+  const handleEquipmentsButtonClick = () => setActiveFilter("equipment")
+  const handleConditionsButtonClick = () => setActiveFilter("conditions")
+  const handleMonstersButtonClick = () => setActiveFilter("monsters")
 
   return (
     <div className="max-w-prose md:w-full">

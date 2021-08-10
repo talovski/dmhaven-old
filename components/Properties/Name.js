@@ -1,4 +1,4 @@
-import React from "react"
-const Name = ({ name }) => <h2 className="pt-2 font-bold text-xl">{name}</h2>
+import React from 'react'
+const Name = ({ name }) => <h2 className="font-bold text-xl">{name}</h2>
 
 export default Name

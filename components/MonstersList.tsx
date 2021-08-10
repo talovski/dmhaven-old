@@ -17,8 +17,16 @@ const MonstersList: FC<ActiveSearchType> = ({ activeSearch }) => {
     monster.name.toLowerCase().includes(activeSearch.toLowerCase())
   )
 
+  const breakpointColumnsObj = {
+    default: 3,
+    1100: 2,
+    700: 1,
+    500: 1
+  }
   return (
-    <Masonry breakpointCols={3} className="flex ml-0 mr-2 w-auto">
+    <Masonry
+      breakpointCols={breakpointColumnsObj}
+      className="flex ml-0 mr-2 w-auto">
       {filteredMonsters.map((monster) => (
         <Monster key={monster.index} monster={monster} />
       ))}

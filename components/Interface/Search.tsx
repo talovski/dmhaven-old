@@ -1,32 +1,31 @@
-import React from 'react'
+import React, { FC } from 'react'
 import SearchButton from './SearchButton'
 
-function Search({ setActiveFilter, activeSearch, setActiveSearch }) {
+type SearchProps = {
+  setActiveFilter: React.Dispatch<React.SetStateAction<string>>
+  setActiveSearch: React.Dispatch<React.SetStateAction<string>>
+  activeSearch: string
+}
+
+const Search: FC<SearchProps> = ({
+  setActiveFilter,
+  setActiveSearch,
+  activeSearch
+}) => {
   const handleInputChange = (event) => setActiveSearch(event.target.value)
 
-  const handleSpellsButtonClick = () => {
-    setActiveFilter('spells')
-  }
-
-  const handleEquipmentsButtonClick = () => {
-    setActiveFilter('equipment')
-  }
-
-  const handleConditionsButtonClick = () => {
-    setActiveFilter('conditions')
-  }
-
-  const handleMonstersButtonClick = () => {
-    setActiveFilter('monsters')
-  }
+  const handleSpellsButtonClick = () => setActiveFilter('spells')
+  const handleEquipmentsButtonClick = () => setActiveFilter('equipment')
+  const handleConditionsButtonClick = () => setActiveFilter('conditions')
+  const handleMonstersButtonClick = () => setActiveFilter('monsters')
 
   return (
     <div className="max-w-prose md:w-full">
       <input
-        onChange={handleInputChange}
         className="px-3 py-1 border-2 rounded-lg border-gray-200 outline-none"
-        type="text"
+        onChange={handleInputChange}
         value={activeSearch}
+        type="text"
       />
 
       <div className="my-2 flex flex-row flex-wrap justify-start align-middle">

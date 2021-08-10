@@ -1,5 +1,11 @@
-import React from 'react'
-const SearchButton = ({ text, activateFilter }) => {
+import React, { FC } from 'react'
+
+type SearchButtonProps = {
+  text: string
+  activateFilter: () => void
+}
+
+const SearchButton: FC<SearchButtonProps> = ({ text, activateFilter }) => {
   return (
     <button
       onClick={activateFilter}

@@ -8,5 +8,5 @@ export const Wiki = () => (
 );
 
 const StyledWiki = styled('div', {
-	marginLeft: '248px'
+	marginLeft: '268px'
 });

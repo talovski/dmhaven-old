@@ -7,8 +7,8 @@ export const Sidebar = () => (
 		<h3>DM Haven</h3>
 		<div>
 			{Categories.map((cat) => (
-				<Link to={`/wiki/${cat.index}`}>
-					<StyledItem key={cat.index}>{cat.text}</StyledItem>
+				<Link key={cat.index} to={`/wiki/${cat.index}`}>
+					<StyledItem>{cat.text}</StyledItem>
 				</Link>
 			))}
 		</div>

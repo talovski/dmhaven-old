@@ -6,17 +6,29 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "generate": "graphql-codegen --config codegen.yml",
+    "prestart": "pnpm run generate",
+    "predev": "pnpm run generate"
   },
   "dependencies": {
     "@radix-ui/react-popover": "^0.1.6",
     "@radix-ui/react-select": "^0.1.1",
     "@stitches/react": "^1.2.8",
+    "graphql": "^16.5.0",
+    "graphql-request": "^4.3.0",
+    "graphql-tag": "^2.12.6",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "react-router-dom": "^6.3.0"
+    "react-router-dom": "^6.3.0",
+    "zustand": "4.0.0-rc.2"
   },
   "devDependencies": {
+    "@graphql-codegen/cli": "2.8.1",
+    "@graphql-codegen/introspection": "2.2.0",
+    "@graphql-codegen/typescript": "2.7.1",
+    "@graphql-codegen/typescript-graphql-request": "^4.5.1",
+    "@graphql-codegen/typescript-operations": "2.5.1",
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
     "@typescript-eslint/eslint-plugin": "^5.30.7",

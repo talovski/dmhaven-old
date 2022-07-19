@@ -5,6 +5,9 @@ import './index.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Spells } from './features/wiki/Spells';
 import { Sidebar } from './modules/Sidebar';
+import { Wiki } from './features/wiki/Wiki';
+import { Spell } from './features/wiki/Spell';
+import { PlayerClasses } from './features/wiki/PlayerClasses';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
 	<React.StrictMode>
@@ -12,8 +15,10 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
 			<Sidebar />
 			<Routes>
 				<Route path={'/'} element={<App />} />
-				<Route path={'/wiki'}>
+				<Route path={'/wiki'} element={<Wiki />}>
 					<Route path={'spells'} element={<Spells />} />
+					<Route path={'spells/:index'} element={<Spell />} />
+					<Route path={'classes'} element={<PlayerClasses />} />
 				</Route>
 			</Routes>
 		</BrowserRouter>

@@ -39,3 +39,8 @@
 .read-the-docs {
   color: #888;
 }
+
+.popover {
+  background-color: red;
+  border-radius: 4px;
+}

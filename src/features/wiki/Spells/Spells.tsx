@@ -6,8 +6,12 @@ import { Classes } from '../../../types/Classes';
 import { Checkbox, CheckboxIndicator } from '../../../components/Checkbox';
 import { useStore } from '@nanostores/react';
 import { isClassSelected, filteredSpells, updateClasses } from './stores/spellsStore';
+import { create } from 'zustand';
 
 export const Spells = () => {
+	const spellsStore = create((set) => ({
+		spells: null
+	}));
 	const filteredSplls = useStore(filteredSpells);
 	return (
 		<Styles.Container>

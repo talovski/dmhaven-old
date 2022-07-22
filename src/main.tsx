@@ -3,10 +3,10 @@ import ReactDOM from 'react-dom/client';
 import App from './App';
 import './index.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import { Spells } from './features/wiki/Spells';
+import { Spells } from './features/wiki/Spells/Spells';
 import { Sidebar } from './modules/Sidebar';
 import { Wiki } from './features/wiki/Wiki';
-import { Spell } from './features/wiki/Spell';
+import { Spell } from './features/wiki/Spells/Spell';
 import { PlayerClasses } from './features/wiki/PlayerClasses';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(

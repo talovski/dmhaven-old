@@ -6,13 +6,9 @@ import { Classes } from '../../../types/Classes';
 import { Checkbox, CheckboxIndicator } from '../../../components/Checkbox';
 import { useStore } from '@nanostores/react';
 import { isClassSelected, filteredSpells, updateClasses } from './stores/spellsStore';
-import { create } from 'zustand';
 
 export const Spells = () => {
-	const spellsStore = create((set) => ({
-		spells: null
-	}));
-	const filteredSplls = useStore(filteredSpells);
+	const spells = useStore(filteredSpells);
 	return (
 		<Styles.Container>
 			<Header size={'h3'}>Hi! I am spells</Header>
@@ -54,8 +50,8 @@ export const Spells = () => {
 						<Styles.ClassesCell>Subclasses</Styles.ClassesCell>
 					</Styles.Cell>
 				</Styles.Header>
-				{filteredSplls?.length &&
-					filteredSplls?.map((spell) => (
+				{spells?.length &&
+					spells?.map((spell) => (
 						<Styles.Row key={spell?.index}>
 							<Styles.Cell>
 								{spell.index && (

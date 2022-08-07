@@ -1,0 +1,68 @@
+@import 'variables.css';
+
+* {
+	box-sizing: border-box;
+}
+
+html,
+body {
+	padding: 0;
+	margin: 0;
+	font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI',
+		Roboto, Oxygen, Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans',
+		'Helvetica Neue', sans-serif;
+	font-size: 16px;
+	-moz-osx-font-smoothing: grayscale;
+	-webkit-font-smoothing: antialiased;
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-text-size-adjust: 100%;
+}
+
+a {
+	/* color: inherit; */
+	cursor: pointer;
+	text-decoration: underline;
+	text-decoration-thickness: 1px;
+	text-underline-position: under;
+	transition: 0.2s;
+}
+
+button {
+	all: unset;
+	padding: 4px;
+	background-color: var(--color-purple-400);
+	border-radius: 4px;
+	cursor: pointer;
+	transition: ease-in-out 0.1s;
+}
+
+button:hover {
+	background-color: var(--color-purple-300);
+}
+
+input {
+	/*all: unset;*/
+	font-size: inherit;
+}
+
+@media (prefers-color-scheme: dark) {
+	html {
+		color-scheme: dark;
+	}
+
+	body {
+		background: black;
+		color: white;
+	}
+}
+
+@media (prefers-color-scheme: light) {
+	button {
+		background-color: var(--color-off-white);
+	}
+
+	button:hover {
+		background-color: var(--color-purple-100);
+	}
+}

@@ -1,0 +1,25 @@
+{
+  "extends": [
+    "stylelint-config-recommended",
+    "stylelint-prettier/recommended",
+    "stylelint-config-idiomatic-order",
+    "stylelint-config-prettier",
+    "stylelint-prettier"
+  ],
+  "formatter": ["prettier"],
+  "plugins": [
+    "stylelint-prettier",
+    "stylelint-order"
+  ],
+  "rules": {
+    "prettier/prettier": true
+  },
+  "overrides": [
+    {
+      "files": [
+        "**/*.tsx"
+      ],
+      "customSyntax": "@stylelint/postcss-css-in-js"
+    }
+  ]
+}

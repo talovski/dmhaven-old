@@ -1,0 +1,20 @@
+:root {
+	--color-purple-500: #231942;
+	--color-purple-400: #5e548e;
+	--color-purple-300: #9f86c0;
+	--color-purple-200: #be95c4;
+	--color-purple-100: #e0b1cb;
+	--color-beige-dark: #c9ada7;
+	--color-beige-light: #e0c1b3;
+	--color-soft-pink: #c37d92;
+	--color-off-white: #edede9;
+	--font-sans: 'PT Sans', sans-serif;
+	--font-serif: 'Spectral', serif;
+	--space-1: 8px;
+	--space-2: 16px;
+	--space-3: 24px;
+	--space-4: 32px;
+	--space-5: 40px;
+	--space-6: 48px;
+	--space-7: 64px;
+}

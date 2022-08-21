@@ -2,7 +2,7 @@ import client from '../../api/graphql';
 import { getSpells } from '../../api/queries/getSpells';
 import { ShortSpellType } from '../../../types/spells';
 import WikiLayout from '../../../components/layouts/WikiLayout';
-import SpellsTable from '../../../components/wiki/spells-table/SpellsTable';
+import { SpellsTable } from '../../../lib/components/Spells/SpellsTable';
 
 type Props = {
 	spells: ShortSpellType[];

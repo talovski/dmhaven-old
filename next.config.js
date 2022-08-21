@@ -3,6 +3,9 @@ const nextConfig = {
 	reactStrictMode: true,
 	swcMinify: true,
 };
-const withAstroturf = require('next-astroturf');
+// const withAstroturf = require('next-astroturf');
 
-module.exports = withAstroturf(nextConfig);
+const { createVanillaExtractPlugin } = require('@vanilla-extract/next-plugin');
+const withVanillaExtract = createVanillaExtractPlugin();
+
+module.exports = withVanillaExtract(nextConfig);

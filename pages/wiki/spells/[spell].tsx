@@ -11,7 +11,8 @@ type Props = {
 const Spell = ({ spell }: Props) => {
 	return (
 		<WikiLayout>
-			<h1>Hi! I am spell {spell.index}</h1>
+			<h1>Hi! I am no mere spell I am {spell.index}</h1>
+			<p>{spell.desc}</p>
 		</WikiLayout>
 	);
 };
@@ -20,9 +21,8 @@ export async function getStaticPaths() {
 	const { data } = await client.query<{ spells: ShortSpellType[] }>({
 		query: getSpells,
 	});
-	const spells = data.spells;
 
-	const paths = spells.map((spell: { index: string }) => ({
+	const paths = data.spells.map((spell: { index: string }) => ({
 		params: { spell: spell.index },
 	}));
 
@@ -34,7 +34,7 @@ export async function getStaticProps({ params }: { params: string }) {
 		query: getSpell,
 		variables: { params },
 	});
-	const spell = data.spell;
+	const { spell } = data;
 
 	return { props: { spell } };
 }

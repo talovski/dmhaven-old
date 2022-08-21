@@ -13,13 +13,5 @@
   ],
   "rules": {
     "prettier/prettier": true
-  },
-  "overrides": [
-    {
-      "files": [
-        "**/*.tsx"
-      ],
-      "customSyntax": "@stylelint/postcss-css-in-js"
-    }
-  ]
+  }
 }

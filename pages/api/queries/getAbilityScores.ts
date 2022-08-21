@@ -5,6 +5,13 @@ export const getAbilityScores = gql`
 		abilityScores {
 			index
 			name
+			full_name
+			desc
+			skills { 
+				index
+				name
+				desc
+			}
 		}
 	}
 `;

@@ -8,7 +8,7 @@ type Props = {
 	abilityScore: ApiReference;
 };
 
-function AbilityScore({ abilityScore }: Props) {
+export default function AbilityScore({ abilityScore }: Props) {
 	console.log('ability score', abilityScore);
 
 	return (
@@ -22,9 +22,8 @@ export async function getStaticPaths() {
 	const { data } = await client.query<{ abilityScores: ApiReference[] }>({
 		query: getAbilityScores,
 	});
-	const abilityScores = data.abilityScores;
 
-	const paths = abilityScores.map((abilityScore: { index: string }) => ({
+	const paths = data.abilityScores.map((abilityScore: { index: string }) => ({
 		params: { abilityScore: abilityScore.index },
 	}));
 
@@ -36,9 +35,8 @@ export async function getStaticProps({ params }: { params: string }) {
 		query: getAbilityScore,
 		variables: { params },
 	});
-	const abilityScore = data.abilityScore;
+	const { abilityScore } = data;
 
 	return { props: { abilityScore } };
 }
 
-export default AbilityScore;

@@ -1,8 +1,9 @@
-import client from '../../api/graphql';
-import { getSpells } from '../../api/queries/getSpells';
-import { ShortSpellType } from '../../../types/spells';
 import WikiLayout from '../../../components/layouts/WikiLayout';
 import { SpellsTable } from '../../../lib/components/Spells/SpellsTable';
+import { Text } from '../../../lib/primitives/Text/Text';
+import { ShortSpellType } from '../../../types/spells';
+import client from '../../api/graphql';
+import { getSpells } from '../../api/queries/getSpells';
 
 type Props = {
 	spells: ShortSpellType[];
@@ -13,7 +14,9 @@ function Spells({ spells }: Props) {
 	return (
 		<WikiLayout>
 			<div>
-				<h1>Spells</h1>
+				<Text as="h1" size="h1" color="pink" gradient>
+					Spells
+				</Text>
 				<SpellsTable spells={spells} />
 			</div>
 		</WikiLayout>

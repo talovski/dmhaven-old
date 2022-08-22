@@ -20,11 +20,11 @@ const MyApp: NextComponentType<AppContext, AppInitialProps, AppLayoutProps> = ({
 
 	return (
 		<Box
-		as="main"
-		position="relative"
-		width="full"
-		padding='space3'
-		customClassName={classNames([isDarkTheme ? darkThemeClass : lightThemeClass], main)}
+			as="main"
+			position="relative"
+			width="full"
+			padding="space3"
+			customClassName={classNames([isDarkTheme ? darkThemeClass : lightThemeClass], main)}
 		>
 			<Box position="fixed" zIndex="sticky">
 				<Flex space="space2">
@@ -34,9 +34,11 @@ const MyApp: NextComponentType<AppContext, AppInitialProps, AppLayoutProps> = ({
 				</Flex>
 				<button onClick={() => setIsDarkTheme(!isDarkTheme)}>Change theme</button>
 			</Box>
-			<Box paddingTop="space4"><Component {...pageProps} /></Box>
+			<Box paddingTop="space4">
+				<Component {...pageProps} />
+			</Box>
 		</Box>
-			);
-		};
+	);
+};
 
 export default MyApp;

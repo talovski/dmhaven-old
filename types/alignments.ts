@@ -1,6 +1,6 @@
-import { ApiReference } from "./api-reference";
+import { ApiReference } from './api-reference';
 
-export type Alignments = ApiReference & {
-  abbreviation: string;
-  desc: string[];
-}
+export type AlignmentShort = ApiReference & {
+	abbreviation: string;
+	desc: string[];
+};

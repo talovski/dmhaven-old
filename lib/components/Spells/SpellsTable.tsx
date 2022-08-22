@@ -1,4 +1,5 @@
 import { useState } from 'react';
+
 import { ShortSpellType } from '../../../types/spells';
 import { Box, Column, Columns, Search } from '../../primitives';
 import { search, table, tableBody } from './SpellsTable.css';
@@ -38,11 +39,21 @@ export const SpellsTable = ({ spells }: { spells: ShortSpellType[] }) => {
 		});
 
 	return (
-		<Box>
+		<Box position="relative">
 			<Box position="sticky" top={0} paddingY="space3" customClassName={search}>
-				<Columns space="space4" collapseBelow={600} alignY="center">
+				<Columns space="space4" collapseBelow="tablet" alignY="center">
 					<Column width={'1/4'}>
-						<label htmlFor="search">Search by spell name</label>
+						{/* <Popover.Root>
+							<Popover.Trigger
+								className={button({
+									color: 'accent',
+									size: 'small',
+								})}
+							>
+								Filter by class
+							</Popover.Trigger>
+							<Popover.Content>popover</Popover.Content>
+						</Popover.Root> */}
 					</Column>
 					<Column width={'1/2'}>
 						<Search

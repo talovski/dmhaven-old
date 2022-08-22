@@ -1,14 +1,17 @@
 import useSize from '@react-hook/size';
 import { createElement, ReactNode, useRef } from 'react';
-import { atoms, Atoms } from '../../styles/atoms.css';
+
+import { Atoms, atoms } from '../../styles/atoms.css';
+import { breakpoints } from '../../styles/breakpoints';
 
 type ColumnsProps = {
 	as?: 'div' | 'span' | 'ol' | 'ul';
 	space?: Atoms['gap'];
-	collapseBelow?: number;
+	collapseBelow?: keyof typeof breakpoints;
 	align?: Atoms['justifyContent'];
 	alignY?: Atoms['alignItems'];
 	children: ReactNode;
+	id?: string;
 };
 
 export function Columns({
@@ -16,19 +19,22 @@ export function Columns({
 	space = 'none',
 	align = 'start',
 	alignY = 'start',
-	collapseBelow,
+	collapseBelow = 'mobile',
 	children,
+	id = '',
 }: ColumnsProps) {
 	const target = useRef(null);
 	const [width] = useSize(target);
-
+	console.log('width', width);
 	let flexDirection: Atoms['flexDirection'] = 'row';
 	let justifyContent: Atoms['justifyContent'] = align;
 	let alignItems: Atoms['alignItems'] = alignY;
 	let ref = null;
 
-	if (collapseBelow !== undefined && typeof collapseBelow === 'number') {
-		if (width < collapseBelow) {
+	console.log('collapsebelow', breakpoints[collapseBelow]);
+
+	if (collapseBelow !== undefined) {
+		if (width < breakpoints[collapseBelow]) {
 			flexDirection = 'column';
 			justifyContent = alignY;
 			alignItems = align;
@@ -45,5 +51,5 @@ export function Columns({
 		alignItems,
 	});
 
-	return createElement(as, { ref, className }, children);
+	return createElement(as, { ref, className, id }, children);
 }

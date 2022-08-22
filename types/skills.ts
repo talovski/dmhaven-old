@@ -1,10 +1,10 @@
-import { ApiReference } from "./api-reference"
+import { ApiReference } from './api-reference';
 
-export type Skills = ApiReference & {
-  desc?: string[];
-  ability_score: {
-    index: string;
-    name: string;
-    full_name: string;
-  }
-}
+export type SkillShort = ApiReference & {
+	desc?: string[];
+	ability_score: {
+		index: string;
+		name: string;
+		full_name: string;
+	};
+};

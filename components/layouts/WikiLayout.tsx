@@ -1,9 +1,10 @@
-import { ReactNode } from 'react';
-import { Categories } from '../../types/categories';
-import { Stack } from '../../lib/primitives/Stack';
-import { Link } from '../../lib/primitives/Link/Link';
-import { Box } from '../../lib/primitives';
 import { useRouter } from 'next/router';
+import { ReactNode } from 'react';
+
+import { Box } from '../../lib/primitives';
+import { Link } from '../../lib/primitives/Link/Link';
+import { Stack } from '../../lib/primitives/Stack';
+import { Categories } from '../../types/categories';
 
 const WikiLayout = ({ children }: { children: ReactNode }) => {
 	const router = useRouter();
@@ -20,7 +21,7 @@ const WikiLayout = ({ children }: { children: ReactNode }) => {
 				flexBasis={{ mobile: '1', tablet: '1/4' }}
 				overflowY="scroll"
 				height={{ tablet: 'full' }}
-				marginBottom={{ tablet: 'space11'}}
+				marginBottom={{ tablet: 'space11' }}
 				paddingBottom="space8"
 			>
 				<Stack gap="space2" padding="space2" align="start">

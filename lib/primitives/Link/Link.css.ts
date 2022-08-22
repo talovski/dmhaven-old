@@ -85,15 +85,39 @@ export const textLink = recipe({
 				textTransform: 'lowercase',
 				fontSize: vars.fontSize[6],
 				lineHeight: 1.05,
-				color: vars.colors.violet11
+				color: vars.colors.violet11,
 			},
 		},
 		padding: {
 			true: {
-				height: vars.space.space3
-			}
-		}
+				height: vars.space.space3,
+			},
+		},
 	},
+	compoundVariants: [
+		{
+			variants: {
+				color: 'subtle',
+				accented: true,
+			},
+			style: {
+				':hover': {
+					color: vars.colors.violet11,
+				},
+			},
+		},
+		{
+			variants: {
+				color: 'contrast',
+				accented: true,
+			},
+			style: {
+				':hover': {
+					color: vars.colors.violet11,
+				},
+			},
+		},
+	],
 	defaultVariants: {
 		color: 'contrast',
 		size: 'medium',

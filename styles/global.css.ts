@@ -1,4 +1,5 @@
 import { globalFontFace, globalStyle, style } from '@vanilla-extract/css';
+
 import { vars } from './default.css';
 
 globalFontFace('Kurbanistika', {

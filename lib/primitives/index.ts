@@ -7,4 +7,5 @@ export * from './Stack';
 export * from './Popover/Popover';
 export * from './Modal/Modal';
 export * from './Button/Button';
-export * from './Search/Search'
+export * from './Search/Search';
+export * from './Table/Table.css';

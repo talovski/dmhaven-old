@@ -4,49 +4,53 @@ import { vars } from '../../../styles/default.css';
 
 export const textStyles = recipe({
 	base: {
-		lineHeight: 1,
+		// lineHeight: 1.2,
 		margin: 0,
 		fontWeight: 400,
 		fontVariantNumeric: 'tabular-nums',
-		display: 'flex',
+		display: 'block',
 	},
 	variants: {
 		size: {
-			'1': {
-				fontSize: vars.fontSize[1],
-			},
-			'2': {
-				fontSize: vars.fontSize[2],
-			},
-			'3': {
-				fontSize: vars.fontSize[3],
-			},
-			'4': {
+			p: {
 				fontSize: vars.fontSize[4],
 			},
-			'5': {
-				fontSize: vars.fontSize[5],
-				letterSpacing: '-.015em',
+			p2: {
+				fontSize: vars.fontSize[3],
 			},
-			'6': {
-				fontSize: vars.fontSize[6],
-				letterSpacing: '-.016em',
-			},
-			'7': {
-				fontSize: vars.fontSize[7],
-				letterSpacing: '-.031em',
-				textIndent: '-.005em',
-			},
-			'8': {
+			h1: {
 				fontSize: vars.fontSize[8],
-				letterSpacing: '-.034em',
-				textIndent: '-.018em',
+				fontWeight: 900,
 			},
-			'9': {
-				fontSize: vars.fontSize[9],
-				letterSpacing: '-.055em',
-				textIndent: '-.025em',
+			h2: {
+				fontSize: vars.fontSize[6],
+				fontWeight: 600,
+				paddingBottom: vars.space.space2,
 			},
+			h3: {
+				fontSize: vars.fontSize[6],
+				letterSpacing: '-.015em',
+				paddingBottom: vars.space.space1,
+			},
+			// h5: {
+			// fontSize: vars.fontSize[6],
+			// letterSpacing: '-.016em',
+			// },
+			// 7: {
+			// 	fontSize: vars.fontSize[7],
+			// 	letterSpacing: '-.031em',
+			// 	textIndent: '-.005em',
+			// },
+			// 8: {
+			// 	fontSize: vars.fontSize[8],
+			// 	letterSpacing: '-.034em',
+			// 	textIndent: '-.018em',
+			// },
+			// 9: {
+			// 	fontSize: vars.fontSize[9],
+			// 	letterSpacing: '-.055em',
+			// 	textIndent: '-.025em',
+			// },
 		},
 		color: {
 			red: { color: vars.colors.red11 },
@@ -65,9 +69,11 @@ export const textStyles = recipe({
 			gold: { color: vars.colors.gold11 },
 			bronze: { color: vars.colors.bronze11 },
 			gray: { color: vars.colors.gray11 },
+			default: { color: vars.colors.gray12 },
 		},
 		gradient: {
 			true: {
+				backgroundClip: 'text',
 				WebkitBackgroundClip: 'text',
 				WebkitTextFillColor: 'transparent',
 			},
@@ -80,7 +86,7 @@ export const textStyles = recipe({
 				gradient: true,
 			},
 			style: {
-				background: `linear-gradient(to right, ${vars.colors.red11}, ${vars.colors.crimson11})`,
+				background: `text linear-gradient(to right, ${vars.colors.red11}, ${vars.colors.crimson11})`,
 			},
 		},
 		{
@@ -89,7 +95,7 @@ export const textStyles = recipe({
 				gradient: true,
 			},
 			style: {
-				background: `linear-gradient(to right, ${vars.colors.red11}, ${vars.colors.crimson11})`,
+				background: `text linear-gradient(to right, ${vars.colors.red11}, ${vars.colors.crimson11})`,
 			},
 		},
 		{
@@ -98,7 +104,7 @@ export const textStyles = recipe({
 				gradient: true,
 			},
 			style: {
-				background: `linear-gradient(to right, ${vars.colors.pink11}, ${vars.colors.purple11})`,
+				background: `text linear-gradient(to right, ${vars.colors.pink11}, ${vars.colors.purple11})`,
 			},
 		},
 		{
@@ -107,7 +113,7 @@ export const textStyles = recipe({
 				gradient: true,
 			},
 			style: {
-				background: `linear-gradient(to right, ${vars.colors.purple11}, ${vars.colors.violet11})`,
+				background: `text linear-gradient(to right, ${vars.colors.purple11}, ${vars.colors.violet11})`,
 			},
 		},
 		{
@@ -116,7 +122,7 @@ export const textStyles = recipe({
 				gradient: true,
 			},
 			style: {
-				background: `linear-gradient(to right, ${vars.colors.violet11}, ${vars.colors.indigo11})`,
+				background: `text linear-gradient(to right, ${vars.colors.violet11}, ${vars.colors.indigo11})`,
 			},
 		},
 		{
@@ -125,7 +131,7 @@ export const textStyles = recipe({
 				gradient: true,
 			},
 			style: {
-				background: `linear-gradient(to right, ${vars.colors.indigo11}, ${vars.colors.blue11})`,
+				background: `text linear-gradient(to right, ${vars.colors.indigo11}, ${vars.colors.blue11})`,
 			},
 		},
 		{
@@ -134,7 +140,7 @@ export const textStyles = recipe({
 				gradient: true,
 			},
 			style: {
-				background: `linear-gradient(to right, ${vars.colors.blue11}, ${vars.colors.cyan11})`,
+				background: `text linear-gradient(to right, ${vars.colors.blue11}, ${vars.colors.cyan11})`,
 			},
 		},
 		{
@@ -143,7 +149,7 @@ export const textStyles = recipe({
 				gradient: true,
 			},
 			style: {
-				background: `linear-gradient(to right, ${vars.colors.cyan11}, ${vars.colors.teal11})`,
+				background: `text linear-gradient(to right, ${vars.colors.cyan11}, ${vars.colors.teal11})`,
 			},
 		},
 		{
@@ -152,7 +158,7 @@ export const textStyles = recipe({
 				gradient: true,
 			},
 			style: {
-				background: `linear-gradient(to right, ${vars.colors.teal11}, ${vars.colors.green11})`,
+				background: `text linear-gradient(to right, ${vars.colors.teal11}, ${vars.colors.green11})`,
 			},
 		},
 		{
@@ -161,7 +167,7 @@ export const textStyles = recipe({
 				gradient: true,
 			},
 			style: {
-				background: `linear-gradient(to right, ${vars.colors.green11}, ${vars.colors.lime11})`,
+				background: `text linear-gradient(to right, ${vars.colors.green11}, ${vars.colors.lime11})`,
 			},
 		},
 		{
@@ -170,7 +176,7 @@ export const textStyles = recipe({
 				gradient: true,
 			},
 			style: {
-				background: `linear-gradient(to right, ${vars.colors.lime11}, ${vars.colors.yellow11})`,
+				background: `text linear-gradient(to right, ${vars.colors.lime11}, ${vars.colors.yellow11})`,
 			},
 		},
 		{
@@ -179,7 +185,7 @@ export const textStyles = recipe({
 				gradient: true,
 			},
 			style: {
-				background: `linear-gradient(to right, ${vars.colors.yellow11}, ${vars.colors.orange11})`,
+				background: `text linear-gradient(to right, ${vars.colors.yellow11}, ${vars.colors.orange11})`,
 			},
 		},
 		{
@@ -188,7 +194,7 @@ export const textStyles = recipe({
 				gradient: true,
 			},
 			style: {
-				background: `linear-gradient(to right, ${vars.colors.orange11}, ${vars.colors.red11})`,
+				background: `text linear-gradient(to right, ${vars.colors.orange11}, ${vars.colors.red11})`,
 			},
 		},
 		{
@@ -197,7 +203,7 @@ export const textStyles = recipe({
 				gradient: true,
 			},
 			style: {
-				background: `linear-gradient(to right, ${vars.colors.gold11}, ${vars.colors.gold9})`,
+				background: `text linear-gradient(to right, ${vars.colors.gold11}, ${vars.colors.gold9})`,
 			},
 		},
 		{
@@ -206,7 +212,7 @@ export const textStyles = recipe({
 				gradient: true,
 			},
 			style: {
-				background: `linear-gradient(to right, ${vars.colors.bronze11}, ${vars.colors.bronze9})`,
+				background: `text linear-gradient(to right, ${vars.colors.bronze11}, ${vars.colors.bronze9})`,
 			},
 		},
 		{
@@ -215,12 +221,12 @@ export const textStyles = recipe({
 				gradient: true,
 			},
 			style: {
-				background: `linear-gradient(to right, ${vars.colors.gray11}, ${vars.colors.gray12})`,
+				background: `text linear-gradient(to right, ${vars.colors.gray11}, ${vars.colors.gray12})`,
 			},
 		},
 	],
 	defaultVariants: {
-		size: '3',
-		color: 'gray',
+		size: 'p',
+		color: 'default',
 	},
 });

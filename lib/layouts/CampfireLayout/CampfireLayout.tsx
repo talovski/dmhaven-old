@@ -1,1 +1,1 @@
-export const CampfireLayout = () => <div>Hi</div>
+export const CampfireLayout = () => <div>Hi</div>;

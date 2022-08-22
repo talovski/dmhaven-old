@@ -1,4 +1,5 @@
 import { ReactNode } from 'react';
+
 import { Flex } from '..';
 import { button } from './Button.css';
 
@@ -21,9 +22,7 @@ export const Button = ({ children, color, size }: ButtonProps) => {
 				size: size,
 			})}
 		>
-      <Flex>
-			  {children}
-      </Flex>
+			<Flex>{children}</Flex>
 		</button>
 	);
 };

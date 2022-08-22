@@ -1,9 +1,9 @@
-import { Link } from '../../primitives/Link/Link';
-import { ShortSpellType } from '../../../types/spells';
 import { ApiReference } from '../../../types/api-reference';
+import { ShortSpellType } from '../../../types/spells';
 import { Flex, Popover } from '../../primitives';
-import { tableCell, tableRow } from './SpellsTable.css';
 import { Badge } from '../../primitives/Badge/Badge';
+import { Link } from '../../primitives/Link/Link';
+import { tableCell, tableRow } from './SpellsTable.css';
 
 const SpellsTableRowPopover = ({
 	spellClass,
@@ -30,10 +30,13 @@ const SpellsTableRowPopover = ({
 export const SpellsTableRow = ({ spell }: { spell: ShortSpellType }) => (
 	<tr className={tableRow}>
 		<td className={tableCell()}>
-			<Link href={'spells/' + spell.index} size="small">{spell.name}</Link>
+			<Link href={'spells/' + spell.index} size="small">
+				{spell.name}
+			</Link>
 		</td>
+		<td className={tableCell()}>{spell.level}</td>
 		<td className={tableCell()}>
-			<Flex space='space1'>
+			<Flex space="space1">
 				{spell.classes.map((spellClass) => (
 					<SpellsTableRowPopover key={spellClass.index} spellClass={spellClass} type="class" />
 				))}

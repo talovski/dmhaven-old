@@ -1,4 +1,5 @@
 import { recipe } from '@vanilla-extract/recipes';
+
 import { vars } from '../../../styles/default.css';
 
 export const button = recipe({
@@ -10,13 +11,39 @@ export const button = recipe({
 	variants: {
 		color: {
 			neutral: {
-				background: 'whitesmoke',
+				background: vars.colors.mauve3,
+				color: vars.colors.mauve12,
+
 				':hover': {
-					background: 'red',
+					background: vars.colors.mauve4,
+					boxShadow: vars.shadows.small,
+				},
+
+				':active': {
+					transform: vars.transforms.touchable,
 				},
 			},
-			brand: { background: 'blueviolet' },
-			accent: { background: 'slateblue' },
+			brand: {
+				background: 'blueviolet',
+				color: vars.colors.violet12,
+			},
+			accent: {
+				background: vars.colors.violet11,
+				color: vars.colors.violet1,
+
+				':hover': { background: vars.colors.violet9 },
+
+				':active': {
+					transform: vars.transforms.touchable,
+				},
+
+				selectors: {
+					'&[data-state="open"], &[data-state="open"]': {
+						background: vars.colors.violet9,
+						transform: vars.transforms.touchable,
+					},
+				},
+			},
 		},
 		size: {
 			small: { padding: vars.space.space2, gap: vars.space.space2 },

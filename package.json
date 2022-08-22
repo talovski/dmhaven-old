@@ -6,7 +6,7 @@
 		"dev": "next dev",
 		"build": "next build",
 		"start": "next start",
-		"lint": "next lint && stylelint --fix **/*.{css,tsx} && eslint \"**/*.{tsx,js,ts}\" --fix",
+		"lint": "next lint && eslint \"**/*.{tsx,js,ts}\" --fix",
 		"postinstall": "husky install",
 		"typecheck": "tsc",
 		"prettier": "prettier --check \"**/*.{js,jsx,ts,tsx,css,md,json}\"",

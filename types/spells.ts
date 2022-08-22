@@ -1,10 +1,12 @@
 import { ApiReference } from './api-reference';
 
+// stylelint --fix **/*.{css,tsx}
 export type ShortSpellType = ApiReference & {
 	index: string;
 	name: string;
 	classes: ApiReference[];
 	subclasses: ApiReference[];
+	level: number;
 	damage: {
 		damage_type: ApiReference | ApiReference[];
 	};

@@ -15,10 +15,12 @@ export const SpellsTableHeader = ({
 	isClassSelected,
 }: TableHeaderProps) => {
 	const disabledClasses = ['barbarian', 'rogue', 'monk', 'fighter'];
+
 	return (
 		<thead className={tableHead}>
 			<tr className={tableCell({ align: 'start', border: 'solid' })}>
 				<th className={tableHeadCell({ align: 'start' })}>Name</th>
+				<td className={tableHeadCell({ align: 'start' })}>Level</td>
 				<td className={tableHeadCell({ align: 'start' })}>
 					<Popover.Root>
 						<Popover.Trigger>
@@ -27,7 +29,7 @@ export const SpellsTableHeader = ({
 						<Popover.Content width="space11">
 							<Column>
 								{characterClasses.map((characterClass) => (
-									<Flex key={characterClass.index} space='space10'>
+									<Flex key={characterClass.index} space="space10">
 										<Checkbox
 											value={characterClass.index}
 											checked={isClassSelected(characterClass.index)}
@@ -42,6 +44,7 @@ export const SpellsTableHeader = ({
 						</Popover.Content>
 					</Popover.Root>
 				</td>
+				<td className={tableHeadCell({ align: 'start' })}>Subclasses</td>
 			</tr>
 		</thead>
 	);

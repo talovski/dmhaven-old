@@ -16,15 +16,15 @@ const responsiveProperties = defineProperties({
 	defaultCondition: 'mobile',
 	conditions: {
 		mobile: {},
-    tablet: {
-      '@media': `screen and (min-width: ${breakpoints.tablet}px)`,
-    },
-    desktop: {
-      '@media': `screen and (min-width: ${breakpoints.desktop}px)`,
-    },
-    wide: {
-      '@media': `screen and (min-width: ${breakpoints.wide}px)`,
-    },
+		tablet: {
+			'@media': `screen and (min-width: ${breakpoints.tablet}px)`,
+		},
+		desktop: {
+			'@media': `screen and (min-width: ${breakpoints.desktop}px)`,
+		},
+		wide: {
+			'@media': `screen and (min-width: ${breakpoints.wide}px)`,
+		},
 	},
 	responsiveArray: ['mobile', 'tablet', 'desktop', 'wide'],
 	properties: {
@@ -77,9 +77,13 @@ const responsiveProperties = defineProperties({
 			'1/4': `${100 / 4}%`,
 			'3/4': `${300 / 4}%`,
 			'1/5': `${100 / 5}%`,
+			'1/6': `${100 / 6}%`,
+			'1/8': `${100 / 8}%`,
 			'2/5': `${200 / 5}%`,
 			'3/5': `${300 / 5}%`,
 			'4/5': `${400 / 5}%`,
+			'5/6': `${500 / 6}%`,
+			'7/8': `${700 / 8}%`,
 		},
 		margin: vars.space,
 		marginTop: vars.space,

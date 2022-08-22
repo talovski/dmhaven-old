@@ -5,6 +5,7 @@ export const getSpells = gql(`
     spells {
       index
       name
+    level
       classes {
         index
         name
